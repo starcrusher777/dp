@@ -1,0 +1,36 @@
+﻿.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 7px;
+    padding: 5px;
+}
+
+.portfolio-item {
+    overflow: hidden;
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item.large {
+    grid-row: span 3;
+    grid-column: span 3;
+}
+
+.portfolio-item.medium {
+    grid-row: span 2;
+    grid-column: span 2;
+}
+
+.portfolio-item.small {
+    grid-row: span 1;
+    grid-column: span 1;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.05);
+}
