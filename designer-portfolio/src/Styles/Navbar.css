@@ -1,0 +1,28 @@
+﻿.navbar-brand-custom {
+    color: white !important; /* Ensures it overrides default styling */
+    margin-left: 2px;
+}
+
+.nav-link-custom {
+    color: white !important;
+}
+
+.navbar {
+    background-color: black !important;
+    border: white 1px solid;
+}
+
+.container {
+    
+}
+
+.me-auto {
+    width: 100%;
+    justify-content: space-between;
+    display: flex;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}

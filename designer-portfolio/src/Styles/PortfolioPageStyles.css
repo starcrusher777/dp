@@ -1,12 +1,15 @@
 ﻿.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: inline-grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    grid-auto-rows: minmax(200px, 1fr);
     gap: 7px;
     padding: 5px;
 }
 
 .portfolio-item {
     overflow: hidden;
+    width: 100%;
+    height: 100%;
 }
 
 .portfolio-item img {

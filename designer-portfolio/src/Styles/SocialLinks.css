@@ -1,0 +1,18 @@
+﻿.social-links {
+    text-align: center;
+    padding: 20px;
+}
+
+.social-links h2 {
+    margin-bottom: 10px;
+}
+
+.social-links a {
+    margin: 0 10px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-links a:hover {
+    color: white; /* Здесь можно задать цвет при наведении */
+}
