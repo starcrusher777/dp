@@ -1,5 +1,8 @@
 ﻿.portfolio-grid {
-    display: inline-grid;
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+    display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: minmax(200px, 1fr);
     gap: 7px;

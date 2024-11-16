@@ -16,16 +16,16 @@ import image12 from './Assets/image12.jpg';
 
 const images = [
     { src: image1, alt: 'Work 1', size: 'large' },
-    { src: image2, alt: 'Work 2', size: 'medium' },
-    { src: image3, alt: 'Work 3', size: 'small' },
+    { src: image2, alt: 'Work 2', size: 'large' },
+    { src: image3, alt: 'Work 3', size: 'large' },
     { src: image4, alt: 'Work 4', size: 'medium' },
-    { src: image5, alt: 'Work 5', size: 'large' },
-    { src: image6, alt: 'Work 6', size: 'small' },
-    { src: image7, alt: 'Work 7', size: 'large' },
-    { src: image8, alt: 'Work 8', size: 'medium' },
+    { src: image5, alt: 'Work 5', size: 'medium' },
+    { src: image6, alt: 'Work 6', size: 'medium' },
+    { src: image7, alt: 'Work 7', size: 'small' },
+    { src: image8, alt: 'Work 8', size: 'small' },
     { src: image9, alt: 'Work 9', size: 'small' },
-    { src: image10, alt: 'Work 10', size: 'medium' },
-    { src: image11, alt: 'Work 11', size: 'large' },
+    { src: image10, alt: 'Work 10', size: 'small' },
+    { src: image11, alt: 'Work 11', size: 'small' },
     { src: image12, alt: 'Work 12', size: 'small' },
 ];
 

@@ -5,6 +5,11 @@
 
 .nav-link-custom {
     color: white !important;
+    font-family: Verdana, Geneva, Tahoma, Verdana, sans-serif;
+}
+
+.nav-link-custom:hover {
+    color: yellow !important;
 }
 
 .navbar {
