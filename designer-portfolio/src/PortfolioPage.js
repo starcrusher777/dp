@@ -1,40 +1,44 @@
-﻿import React from "react";
-import './Styles/PortfolioPageStyles.css'
-
-import image1 from './Assets/image1.jpg';
-import image2 from './Assets/image2.jpg';
-import image3 from './Assets/image3.png';
-import image4 from './Assets/image4.jpg';
-import image5 from './Assets/image5.jpg';
-import image6 from './Assets/image6.jpg';
-import image7 from './Assets/image7.jpg';
-import image8 from './Assets/image8.jpg';
-import image9 from './Assets/image9.png';
-import image10 from './Assets/image10.jpg';
-import image11 from './Assets/image11.jpg';
-import image12 from './Assets/image12.jpg';
-
-const images = [
-    { src: image1, alt: 'Work 1', size: 'large' },
-    { src: image2, alt: 'Work 2', size: 'large' },
-    { src: image3, alt: 'Work 3', size: 'large' },
-    { src: image4, alt: 'Work 4', size: 'medium' },
-    { src: image5, alt: 'Work 5', size: 'medium' },
-    { src: image6, alt: 'Work 6', size: 'medium' },
-    { src: image7, alt: 'Work 7', size: 'small' },
-    { src: image8, alt: 'Work 8', size: 'small' },
-    { src: image9, alt: 'Work 9', size: 'small' },
-    { src: image10, alt: 'Work 10', size: 'small' },
-    { src: image11, alt: 'Work 11', size: 'small' },
-    { src: image12, alt: 'Work 12', size: 'small' },
-];
+﻿import React, { useEffect, useState } from "react";
+import './Styles/PortfolioPageStyles.css';
+import client from "./contentful";
 
 const PortfolioPage = () => {
+    const [images, setImages] = useState([]);
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            try {
+                const response = await client.getEntries({ content_type: 'imageBank' });
+                console.log('Full response', response);
+
+                if (response.items) {
+                    const formattedImages = response.items[0].fields.imagebank.map((item, index) => {
+                        console.log('Item fields:', item.fields); // Логируем каждый item
+
+                        // Проверяем, что item.fields содержит images и size
+                        return {
+                            src: item.fields.file.url, // Используем безопасную навигацию
+                            size: response.items[0].fields.size[index],
+                        };
+                    });
+
+                    setImages(formattedImages);
+                } else {
+                    console.error("No items found in response");
+                }
+            } catch (error) {
+                console.error('Error fetching images:', error);
+            }
+        };
+
+        fetchImages();
+    }, []);
+
     return (
         <div className="portfolio-grid">
             {images.map((image, index) => (
                 <div key={index} className={`portfolio-item ${image.size}`}>
-                    <img src={image.src} alt={image.alt} />
+                    <img src={image.src} alt={image.size || "Image"} />
                 </div>
             ))}
         </div>
