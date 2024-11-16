@@ -1,0 +1,38 @@
+﻿.about-me {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    max-width: 800px;
+}
+
+.section {
+    width: 100%;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.section.left .section-content {
+    text-align: center;
+    margin-left: auto;
+    max-width: 100%;
+    font-family: Controlupright Web, sans-serif;
+}
+
+.section.right .section-content {
+    text-align: center;
+    margin-right: auto;
+    max-width: 100%;
+    font-family: Controlupright Web, sans-serif;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    font-family: Controlupright Web, sans-serif;
+    color: white;
+}
+
+.section-title:hover {
+    color: yellow !important;
+}

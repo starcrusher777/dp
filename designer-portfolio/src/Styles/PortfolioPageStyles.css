@@ -5,11 +5,12 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     grid-auto-rows: minmax(200px, 1fr);
-    gap: 7px;
+    gap: 100px;
     padding: 5px;
 }
 
 .portfolio-item {
+    margin-top: 5px;
     overflow: hidden;
     width: 100%;
     height: 100%;

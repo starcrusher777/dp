@@ -16,3 +16,8 @@
 .social-links a:hover {
     color: yellow; /* Здесь можно задать цвет при наведении */
 }
+
+.social-links-header {
+    font-size: large;
+    font-family: Controlupright Web, sans-serif;
+}

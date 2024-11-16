@@ -29,6 +29,56 @@
   color: #61dafb;
 }
 
+.social-line {
+  position: relative;
+  width: 200px;
+  height: 2px;
+  margin: 10px auto;
+  overflow: hidden;
+  background-color: yellow;
+}
+
+.social-line::before,
+.social-line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 30px;
+  background-color: yellow;
+  transition: transform 0.4s ease;
+}
+
+.social-line::before {
+  right: 50%;
+  transform: translateX(0);
+  background-color: yellow;
+}
+
+.social-line::after {
+  left: 50%;
+  transform: translateX(0);
+  background-color: yellow;
+}
+
+/* Разделенная линия */
+.split .social-line::before {
+  transform: translateX(-100%);
+  background-color: yellow;
+}
+
+.split .social-line::after {
+  transform: translateX(100%);
+  background-color: yellow;
+}
+
+/* Сложенная линия */
+.collapsed .social-line::before,
+.collapsed .social-line::after {
+  transform: translateX(0);
+  background-color: yellow;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

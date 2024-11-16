@@ -13,11 +13,10 @@ const PortfolioPage = () => {
 
                 if (response.items) {
                     const formattedImages = response.items[0].fields.imagebank.map((item, index) => {
-                        console.log('Item fields:', item.fields); // Логируем каждый item
-
-                        // Проверяем, что item.fields содержит images и size
+                        console.log('Item fields:', item.fields);
+                        
                         return {
-                            src: item.fields.file.url, // Используем безопасную навигацию
+                            src: item.fields.file.url,
                             size: response.items[0].fields.size[index],
                         };
                     });
