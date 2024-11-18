@@ -4,6 +4,7 @@ import client from "./contentful";
 
 const PortfolioPage = () => {
     const [images, setImages] = useState([]);
+    const [selectedImage, setSelectedImage] = useState(null);
 
     useEffect(() => {
         const fetchImages = async () => {
@@ -33,13 +34,37 @@ const PortfolioPage = () => {
         fetchImages();
     }, []);
 
+    const openModal = (image) => {
+        console.log("Image clicked:", image); // Проверка клика на изображение
+        setSelectedImage(image);
+    };
+    const closeModal = () => {
+        console.log("Closing modal");  // Лог для проверки
+        setSelectedImage(null);
+    };
+
+    console.log("Selected image:", selectedImage);
+
+    console.log("Rendering modal:", selectedImage !== null);
+
     return (
         <div className="portfolio-grid">
             {images.map((image, index) => (
                 <div key={index} className={`portfolio-item ${image.size}`}>
-                    <img src={image.src} alt={image.size || "Image"} />
+                    <img src={image.src} alt={image.size || "Image"}
+                    onClick={() => openModal(image.src)}/>
+                    {selectedImage && (
+                        <div className="modal" onClick={closeModal}>
+                            <div className="modal-content">
+                                <span className="close" onClick={closeModal}>&times;</span>
+                                <img className="modal-image" src={selectedImage} alt="Full-size view"/>
+                            </div>
+                        </div>
+                    )}
                 </div>
             ))}
+
+
         </div>
     );
 };
